@@ -23,3 +23,6 @@ Scripts/
 .kiro/
 .vscode/
 .idea/
+
+# Interview prep (personal notes)
+docs/INTERVIEW-DEMO-SCRIPT.md
