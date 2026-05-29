@@ -1,0 +1,25 @@
+# Environment
+config/.env
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+Lib/
+Scripts/
+
+# Testing
+.hypothesis/
+.pytest_cache/
+
+# IDE
+.kiro/
+.vscode/
+.idea/
