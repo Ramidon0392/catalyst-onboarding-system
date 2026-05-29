@@ -23,19 +23,22 @@ Intake Form → Webhook → Make.com → Airtable CRM → Google Sheets Dashboar
                                   Error Log → Admin Notification
 ```
 
+## Live System Links
+
+The system is fully operational. Click below to inspect each layer:
+
+| Layer | Link |
+|-------|------|
+| **Automation Workflow** | [Make.com Scenario](https://us2.make.com/public/shared-scenario/c4k8NQeR0sL/integration-webhooks) |
+| **Reporting Dashboard** | [Google Sheets Dashboard](https://docs.google.com/spreadsheets/d/176uXQzi_Faz-k_cconH5g9ebniTKMzCj1G1LZvJdrko/edit) |
+| **Source Code** | [GitHub Repository](https://github.com/Ramidon0392/catalyst-onboarding-system) |
+
 ## Setup Instructions
 
 1. Clone the repository
 2. Copy `config/.env.example` to `config/.env` and fill in credentials
 3. Install dependencies: `pip install -r requirements.txt`
 4. Run tests: `pytest tests/ -v`
-
-## Live Demo
-
-The system is fully operational with:
-- **Airtable CRM**: 3 tables (Leads, Workflow Status, Error Log)
-- **Make.com Automation**: Webhook-triggered lead intake with duplicate detection
-- **Google Sheets Dashboard**: Real-time metrics across 3 tabs
 
 ## Project Structure
 
@@ -47,9 +50,18 @@ The system is fully operational with:
 /scripts          - Utility scripts (cleanup, reporting, duplicate detection)
 ```
 
+## Key Features
+
+- **Duplicate Detection**: Email-based deduplication prevents duplicate CRM records
+- **Error Handling**: No silent failures — every error is logged with structured metadata
+- **Role-Based Access Control**: Only Automation_Engine and Systems_Administrator can write to CRM tables
+- **Follow-Up Reminders**: Scheduled automation flags stale leads after 48 hours
+- **Real-Time Dashboard**: Metrics refresh on every CRM event (Total Leads, Funnel, Advisor Counts)
+
 ## Future Improvements
 
 - Slack/Teams integration for real-time notifications
-- ML-based lead scoring
-- Automated advisor assignment
-- Client self-service portal
+- ML-based lead scoring from historical conversion data
+- Automated advisor assignment based on capacity/specialization
+- Client self-service portal for document uploads
+- OAuth authentication for webhook endpoint security
